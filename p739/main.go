@@ -17,7 +17,7 @@ func main() {
 func dailyTemperatures(temperatures []int) []int {
 	st := list.New()
 	id := list.New()
-	ans := [100000]int{}
+	ans := make([]int, len(temperatures))
 	for i, t := range temperatures {
 		if st.Back() == nil {
 			st.PushBack(t)
@@ -31,7 +31,7 @@ func dailyTemperatures(temperatures []int) []int {
 			id.PushBack(i)
 		}
 	}
-	return ans[:len(temperatures)]
+	return ans
 }
 
 func getStdin() []string {
