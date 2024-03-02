@@ -17,18 +17,17 @@ func main() {
 func twoSum(numbers []int, target int) []int {
 	i := 0
 	j := len(numbers) - 1
-	for {
+	for i < j {
+		if numbers[i]+numbers[j] == target {
+			return []int{i + 1, j + 1}
+		}
 		if numbers[i]+numbers[j] < target {
 			i++
-			continue
-		}
-		if numbers[i]+numbers[j] > target {
+		} else {
 			j--
-			continue
 		}
-		break
 	}
-	return []int{i + 1, j + 1}
+	return []int{0, 0}
 }
 
 func getStdin() []string {
